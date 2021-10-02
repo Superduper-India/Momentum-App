@@ -10,19 +10,34 @@
 </head>
 
 <body>
-    <form class="hidden login-form">
-        <input required maxlength="15" type="text" placeholder="Pls put your name" />
-        <button>Log In</button>
-    </form>
+    <div class="wrap">
+        <!-- 로그인 input style="background-color: transparent; 입력박스 배경색 투명으로 바꾸기 -->
+        <form class="hidden login-form">
+            <span>Hello, what's your name?</span>
+            <input required maxlength="15" type="text" style="background-color: transparent;" />
+            <button>Continue</button>
+        </form>
 
-    <h1 class="hidden greetings"></h1>
-    <button class="logout-btn">Log Out</button>
+        <!-- 로그아웃: window.location.reload() 페이지 새로고침, localStorage.removeItem(SAVED_USERNAME) 저장된 유저이름삭제 -->
+        <form class="logout-form">
+            <h2 class="clock">00:00:00</h2>
+            <h1 class="hidden greetings"></h1>
+            <input type="button" value="Logout"
+                onclick="window.location.reload(), localStorage.removeItem(SAVED_USERNAME)" />
+        </form>
 
-    <!-- 자바스크립트 연동-->
-    <script src="js/clock.js"></script>
-    <script src="js/login-logout.js"></script>
-    <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
+        <!-- 랜덤 인용구 -->
+        <div class="quotes">
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- 자바스크립트 연동 -->
+        <script src="js/clock.js"></script>
+        <script src="js/login-logout.js"></script>
+        <script src="js/quotes.js"></script>
+        <script src="js/background.js"></script>
+    </div>
 </body>
 
 </html>
