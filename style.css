@@ -85,6 +85,25 @@
     opacity: 0.5;
     font-size: 14px;
 }
+/* To-Do List */
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 20px;
+    z-index: 0;
+}
 
 .hidden {
     display: none;

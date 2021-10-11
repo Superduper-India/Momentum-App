@@ -1,8 +1,10 @@
+// html에서 불러오기 //
 const loginForm = document.querySelector(".login-form")
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector(".greetings");
 const logoutForm = document.querySelector(".logout-form");
 
+// 반복되는 단어 변수명으로 저장 //
 const SAVED_USERNAME = "Saved Username";
 const HIDDEN_CLASSNAME = "hidden";
 

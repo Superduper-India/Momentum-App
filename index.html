@@ -26,8 +26,20 @@
                 onclick="window.location.reload(), localStorage.removeItem(SAVED_USERNAME)" />
         </form>
 
+        <!-- To Do List -->
+        <form class="todo-form">
+            <input type="text" placeholder="What is your main focus for today?" required />
+        </form>
+        <ul class="todo-list"></ul>
+
         <!-- 랜덤 인용구 -->
         <div class="quotes">
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- 날씨 -->
+        <div id="weather">
             <span></span>
             <span></span>
         </div>
@@ -37,6 +49,8 @@
         <script src="js/login-logout.js"></script>
         <script src="js/quotes.js"></script>
         <script src="js/background.js"></script>
+        <script src="js/todo-self.js"></script>
+        <script src="js/weather.js"></script>
     </div>
 </body>
 
