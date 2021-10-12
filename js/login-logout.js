@@ -2,7 +2,8 @@
 const loginForm = document.querySelector(".login-form")
 const loginInput = loginForm.querySelector("input");
 const greeting = document.querySelector(".greetings");
-const logoutForm = document.querySelector(".logout-form");
+const main = document.querySelector(".main");
+const logoutBtn = document.querySelector(".logout-btn");
 
 // 반복되는 단어 변수명으로 저장 //
 const SAVED_USERNAME = "Saved Username";
@@ -17,14 +18,16 @@ function submitUsername(event) {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     greeting.innerText = `Welcome, ${inputUsername}!`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
-    logoutForm.classList.remove(HIDDEN_CLASSNAME);
+    main.classList.remove(HIDDEN_CLASSNAME);
+    logoutBtn.classList.remove(HIDDEN_CLASSNAME);
 }
 
 const savedUsername = localStorage.getItem(SAVED_USERNAME);
 
 // 유저이름이 localStorage에 저장되어 있지 않을경우, step1 //
 if (savedUsername === null) {
-    logoutForm.classList.add(HIDDEN_CLASSNAME);
+    main.classList.add(HIDDEN_CLASSNAME);
+    logoutBtn.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     loginForm.addEventListener("submit", submitUsername);
 
@@ -32,4 +35,5 @@ if (savedUsername === null) {
 } else {
     greeting.innerText = `Welcome, ${savedUsername}.`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    logoutBtn.classList.remove(HIDDEN_CLASSNAME);
 }

@@ -1,4 +1,4 @@
-/* 전체 */
+/* 0. 전체 */
 * {
     box-sizing: border-box;
     border:none;
@@ -6,28 +6,31 @@
 }
 .wrap {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 .bgimg {
-    height: 100vh;
     z-index: -1;
 }
 
 
-/* 로그인, 로그아웃폼 공통 스타일 */
-.login-form,
-.logout-form {
+
+/* 1. 화면상단 */
+.top {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    color: white;
-    position: absolute;
-    top: 50%;
-    z-index: 0;
 }
-.login-form button,
-.logout-form input {
+/* 로그아웃 버튼 */
+.logout-btn {
+    position: absolute;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+}
+.logout-btn input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     height: 50px;
     border-radius: 24px;
@@ -36,21 +39,42 @@
     background-color:transparent;
     border: solid 1px white;
 }
-
-/* 로그인 버튼 */
-.login-form button {
-    margin-top: 36px;
+/* 날씨 */
+.weather {
+    line-height: 150%;
+    position: absolute;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+}
+.weather span:last-child {
+    font-size: 14px;
 }
 
-/* 화면문구 */
+/* 2. 로그인&메인 화면 */
+/* 기본적용 스타일 */
+.login-form,
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+}
+/* 로그인&메인 화면문구 */
 .login-form span,
-.greetings {
-    display: block;
+.main .greetings {
     font-size: 52px;
     font-weight: 500;
     margin-bottom: 24px;
 }
-/* 입력박스 */
+/* 로그인폼 입력박스 */
 .login-form input{
     display: block;
     font-size: 52px;
@@ -63,13 +87,59 @@
 .login-form input:focus{
     outline: none;
 }
+/* 로그인 버튼 */
+.login-form button {
+    margin-top: 36px;
+    width: 120px;
+    height: 50px;
+    border-radius: 24px;
+    font-size: 18px;
+    color:white;
+    background-color:transparent;
+    border: solid 1px white;
+}
 /* 시계 */
-.logout-form .clock {
+.clock {
     margin: 0;
     font-size: 180px;
     font-weight: 500;
-    top: 150px;
 }
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* To-Do 화면문구 */
+.todo-form span {
+    font-size: 36px;
+    font-weight: 400;
+}
+/* To-Do 입력박스 */
+.todo-form input{
+    font-size: 38px;
+    font-weight: 500;
+    width: 600px;
+    color: white;
+    text-align: center;
+    border-bottom: white 2px solid;
+}
+.todo-form input:focus{
+    outline: none;
+}
+.todo-list {
+    margin-top: 32px;
+    list-style: none;
+}
+.todo-list span {
+    font-size: 28px;
+    font-weight: 500;
+    margin-right: 6px;
+}
+.todo-list button {
+    background-color: transparent;
+    font-size: 28px;
+}
+
 /* 인용구 */
 .quotes {
     color: white;
@@ -79,49 +149,14 @@
     line-height: 150%;
     font-size: 18px;
     position: absolute;
-    bottom: -200px;
+    bottom: -400px;
 }
 .quotes span:last-child{
     opacity: 0.5;
     font-size: 14px;
 }
-/* To-Do List */
-.todo-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    position: absolute;
-    top: 0;
-    z-index: 0;
-}
-.todo-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    position: absolute;
-    top: 20px;
-    z-index: 0;
-}
 
+/* 기타등등 */
 .hidden {
     display: none;
 }
-
-
-/* 이 부분 나중에 다시 구현하기 */
-/* 글자가 서서히 사라지는 애니메이션 */
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-. {
-    animation: fade-out 3s forwards; /* 글자가 서서히 사라진상태 유지 */
-}
-

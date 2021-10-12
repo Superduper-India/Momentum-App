@@ -11,6 +11,18 @@
 
 <body>
     <div class="wrap">
+        <div class="top">
+            <!-- 로그아웃: window.location.reload() 페이지 새로고침, localStorage.removeItem(SAVED_USERNAME) 저장된 유저이름삭제 -->
+            <form class="hidden logout-btn">
+                <input type="button" value="Logout"
+                    onclick="window.location.reload(), localStorage.removeItem(SAVED_USERNAME)" />
+            </form>
+            <!-- 날씨 -->
+            <div class="weather">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
         <!-- 로그인 input style="background-color: transparent; 입력박스 배경색 투명으로 바꾸기 -->
         <form class="hidden login-form">
             <span>Hello, what's your name?</span>
@@ -18,39 +30,31 @@
             <button>Continue</button>
         </form>
 
-        <!-- 로그아웃: window.location.reload() 페이지 새로고침, localStorage.removeItem(SAVED_USERNAME) 저장된 유저이름삭제 -->
-        <form class="logout-form">
+        <div class="main">
             <h2 class="clock">00:00:00</h2>
             <h1 class="hidden greetings"></h1>
-            <input type="button" value="Logout"
-                onclick="window.location.reload(), localStorage.removeItem(SAVED_USERNAME)" />
-        </form>
-
-        <!-- To Do List -->
-        <form class="todo-form">
-            <input type="text" placeholder="What is your main focus for today?" required />
-        </form>
-        <ul class="todo-list"></ul>
+            <!-- To Do List -->
+            <form class="todo-form">
+                <span>What is your main focus for today?</span>
+                <input type="text" style="background-color: transparent;" required />
+            </form>
+            <ul class="todo-list"></ul>
+        </div>
 
         <!-- 랜덤 인용구 -->
         <div class="quotes">
             <span></span>
             <span></span>
         </div>
+    </div>
 
-        <!-- 날씨 -->
-        <div id="weather">
-            <span></span>
-            <span></span>
-        </div>
-
-        <!-- 자바스크립트 연동 -->
-        <script src="js/clock.js"></script>
-        <script src="js/login-logout.js"></script>
-        <script src="js/quotes.js"></script>
-        <script src="js/background.js"></script>
-        <script src="js/todo-self.js"></script>
-        <script src="js/weather.js"></script>
+    <!-- 자바스크립트 연동 -->
+    <script src="js/clock.js"></script>
+    <script src="js/login-logout.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo-self.js"></script>
+    <script src="js/weather.js"></script>
     </div>
 </body>
 

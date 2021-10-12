@@ -27,7 +27,7 @@ function paintToDo(anything) {
     span.innerText = anything.text;
 
     const btn = document.createElement("button"); // html-button 생성
-    btn.innerText = "❌";
+    btn.innerText = "📝";
     btn.addEventListener("click", deleteToDo); // 버튼클릭시, deleteToDo function 작동
 
     // html 자식부모 설정 //
